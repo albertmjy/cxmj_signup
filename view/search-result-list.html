@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--<div>
+	<div class="flex-item">
+		<img src="img/1244782443.jpg" class="thumb" />
+		<div class="info">
+			<div>复原昌号易武大树</div>
+			<div>
+				<span>2014，</span>
+				<span>生，</span>
+				<span>357，</span>
+				<span>600.00</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="flex-item">
+	<img src="img/1244782443.jpg" class="thumb" />
+	<div class="info">
+		<div>银班章</div>
+		<div>
+			<span>2014，</span>
+			<span>生，</span>
+			<span>357，</span>
+			<span>780.00</span>
+		</div>
+	</div>
+</div>
+
+<div class="flex-item">
+	<img src="img/1244782443.jpg" class="thumb" />
+	<div class="info">
+		<div>霸王青饼</div>
+		<div>
+			<span>2014，</span>
+			<span>生，</span>
+			<span>357，</span>
+			<span>600.00</span>
+		</div>
+	</div>
+</div>-->
+
+<div ng-app='table' >
+	<div class="flex-item" ng-repeat='x in tea'>
+		<div class="">
+			<img src="img/tea_thumb/chenshenghao/{{x.prod_id}}.jpg" class="thumb"  />
+		</div>
+		<div class="info">
+			<div>
+				<span>{{x.brand}}，</span>
+				<span>{{x.prod_name}}，</span>
+			</div>
+			<div>
+				<span>{{x.prod_year}} 年，</span>
+				<span>{{x.technic="raw"?"生":"熟"}}，</span>
+				<span>{{x.weight}}克，</span>
+			</div>
+			 <div class="price ">
+			 	<span>价格：{{x.price}}</span>
+			 </div>
+		</div>
+	</div>
+</div>

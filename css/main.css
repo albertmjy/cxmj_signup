@@ -1,0 +1,52 @@
+.navbar-header{
+	/*background: #AF772F;*/
+}
+
+.navbar-brand{
+	/*float: right;*/
+	padding: 0;
+
+}
+.logo{
+	/*height: 100%;*/
+	height: 80px;
+	margin-top: 20px;
+}
+
+.head-img{
+	width: 100%;
+}
+
+.panel-heading{
+	text-align: center;
+	padding: 0;
+}
+
+h5{
+	color: #AF772F;
+}
+.jumbotron{
+	background: transparent;
+	border: solid 2px #AF772F;
+}
+.panel{
+	/*border: solid 2px #AF772F*/
+	margin-top: 50px;
+}
+
+.flex{
+	display: flex;
+	display: -webkit-flex;
+}
+
+.input-clear{
+	background-color: transparent;
+	border: 0;
+}
+
+.ng-valid~.glyphicon{
+	color: green;
+}
+.ng-invalid~.glyphicon{
+	color: red;
+}
