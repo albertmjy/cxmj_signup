@@ -20,6 +20,8 @@ app.controller('searchList', function($scope, $http) {
 
 app.controller('ngnavCtrl', function($scope, $http, $timeout) {
 	
+	console.log(window)
+	
 	
 //	$scope.labelActive = []
 	
@@ -128,9 +130,27 @@ app.controller('ngnavCtrl', function($scope, $http, $timeout) {
 //	});
 
 	$scope.arar = ["aa", "bb,", "cc"]
-	$scope.doit = function(){
-		console.log($scope)
-		$scope.arar = []
-		$scope.tea = []
+	$scope.doit = function(event ){
+		console.log(event, event.target, event.toElement)
+//		$scope.arar = []
+//		$scope.tea = []
 	}
 })
+
+app.directive("scroll", function ($window) {
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+//      		console.log(window, $window)
+
+//      		console.log(this.screenLeft, this.screenY, this.scrollY, this.pageYOffset)
+//      		console.log(this.innerHeight, this.outerHeight)
+        	
+             if (this.pageYOffset >= 100) {
+                 scope.boolChangeClass = true;
+             } else {
+                 scope.boolChangeClass = false;
+             }
+            scope.$apply();
+        });
+    };
+});

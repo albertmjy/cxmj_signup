@@ -82,6 +82,15 @@
 					<div ng-include="'view/search-result-list.html'"></div>
 				</div>
 				
+				
+				<!--test -->
+				<div ng-app="myApp" scroll id="page" ng-class="{min:boolChangeClass}">
+					g
+				</div>
+				<div ng-click='doit($event)'>
+					click me
+				</div>
+				
 			</section>
 		</div>
 		<!-- ng-nav end-->
