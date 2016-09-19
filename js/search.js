@@ -152,7 +152,7 @@ app.directive("scroll", function ($window, $http) {
         		var docHeight = document.documentElement.offsetHeight
         		var scrollHeight = this.scrollY
         		
-        		console.log($http)
+        		console.log(element, attrs)
         		
         		if (scrollHeight + screenHeight >= docHeight){
         			console.log("true______")
