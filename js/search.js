@@ -137,19 +137,36 @@ app.controller('ngnavCtrl', function($scope, $http, $timeout) {
 	}
 })
 
-app.directive("scroll", function ($window) {
+app.directive("scroll", function ($window, $http) {
     return function(scope, element, attrs) {
+    	
+    		var screenHeight = document.documentElement.clientHeight
+    	
         angular.element($window).bind("scroll", function() {
-//      		console.log(window, $window)
+//      		console.log(document, $window)
 
 //      		console.log(this.screenLeft, this.screenY, this.scrollY, this.pageYOffset)
 //      		console.log(this.innerHeight, this.outerHeight)
         	
-             if (this.pageYOffset >= 100) {
-                 scope.boolChangeClass = true;
-             } else {
-                 scope.boolChangeClass = false;
-             }
+        	
+        		var docHeight = document.documentElement.offsetHeight
+        		var scrollHeight = this.scrollY
+        		
+        		console.log($http)
+        		
+        		if (scrollHeight + screenHeight >= docHeight){
+        			console.log("true______")
+        			// loading ...
+        			
+        			$http.get().then()
+        		}
+        		
+        		
+//           if (this.pageYOffset >= 100) {
+//               scope.boolChangeClass = true;
+//           } else {
+//               scope.boolChangeClass = false;
+//           }
             scope.$apply();
         });
     };
