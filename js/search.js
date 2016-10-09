@@ -117,13 +117,8 @@ app.controller('ngnavCtrl', function($scope, $http, $timeout) {
 		
 	}
 	
-	$scope.imgloadingshow = true
-	$http.get("model/search-list.php").then(function(response) {
-		$scope.tea = response.data
-		$scope.imgloadingshow = false
-		console.log("init scope: ")
-		console.log($scope)
-	})
+	// init loading
+	// move to directive result-list
 	
 //	$scope.$watch('tea', function(newValue, oldValue) {
 //	  alert("teatea")
@@ -171,3 +166,24 @@ app.directive("scroll", function ($window, $http) {
         });
     };
 });
+
+app.directive("resultList", function($window, $http){
+	return {
+		templateUrl: "/cxmj/view/search-result-list.html",
+		link: function($scope, element, attrs){
+			$scope.imgloadingshow = true
+			$http.get("model/search-list.php").then(function(response) {
+				$scope.tea = response.data
+				$scope.imgloadingshow = false
+//				console.log("init scope: ")
+//				console.log($scope)
+			})
+		}
+	}
+})
+
+app.filter("resultImgPath", function(){
+	return function(x){
+		
+	}
+})

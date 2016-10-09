@@ -57,6 +57,8 @@
 		echo json_encode($result);
 		
 	} else {
+		
+		
 		// select * from tea left join price on tea.prod_id=price.prod_id group by prod_id having price_year=max(price_year)
 		// since mysql bug for 'having',  ugly sql below 
 		$sql = "select * from tea left join price on tea.prod_id=price.prod_id and price_year=2016"; 

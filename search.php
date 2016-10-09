@@ -79,7 +79,9 @@
 					<div ng-show='imgloadingshow' class="img-loading"><img src="img/loading-2.gif" /></div>
 					
 					<!--<div ng-include="'view/search-result-table.html'"></div>-->
-					<div ng-include="'view/search-result-list.html'"></div>
+					<!--<div ng-include="'view/search-result-list.html'"></div>-->
+					
+					<div result-list></div>
 				</div>
 				
 				
