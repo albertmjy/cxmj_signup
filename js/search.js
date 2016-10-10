@@ -184,6 +184,6 @@ app.directive("resultList", function($window, $http){
 
 app.filter("resultImgPath", function(){
 	return function(x){
-		
+//		if (x.startsWith("CSH"))
 	}
 })
