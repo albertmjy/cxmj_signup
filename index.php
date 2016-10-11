@@ -79,7 +79,7 @@
 						    <div class="input-group">
 						      <div class="input-group-addon">人数</div>
 						      <select required="required" id="amount" name="amount" class="form-control">
-						      	<option value="0">－参与的人数－</option>
+						      	<!--<option value="0">－参与的人数－</option>-->
 						      	<option value="1">1 人</option>
 						      	<option value="2">2 人</option>
 						      	<option value="3">3 人</option>
