@@ -11,33 +11,11 @@
 		<script type="text/javascript" src="js/angular.min.js" ></script>
 	</head>
 
+
+
 	<body>
-	<!-- top nav bar -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">
-		      	<!--<img class="logo" src="img/getheadimg.jpeg" alt="logo" />-->
-		      	
-		      </a>
-		    </div>
-		  </div>
-		</nav>
-
-		<!-- main body -->
-		<div ng-app="eventApp" class="container-fluid">
-		<div ng-controller="eventCtrl" class="panel">
-			
-			<div class="panel-heading">
-				<img class="logo" src="img/1244782443.jpg" alt="logo" />
-			</div>
-			<div class="panel-body">
-				 <!--<img class="img-circle img-thumbnail head-img" src="http://wx.qlogo.cn/mmopen/9M0PhLTmTIch24EL86awR6CUoGEpXaaSDFjNruCsQRNULdkJqWkQxIibUchz0h5vTI9jnhWfpStCAuia47xN7ZU2GqtP7FEegN/0" />-->
-				 
-
-<?php include "lib/wechat.class.php";
-
- function http_get($url){
+		<?php include "lib/wechat.class.php";
+function http_get($url){
 		$oCurl = curl_init();
 		if(stripos($url,"https://")!==FALSE){
 			curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -71,9 +49,49 @@ $userInfoString = http_get($userInfoUrl);
 $userInfo = json_decode($userInfoString);
 
 
+?>
 
-echo "<img class='img-circle head-img' src='{$userInfo->headimgurl}' />";
-echo "<span class='nickname'>{$userInfo->nickname}</span>";
+		
+		
+		
+	<!-- top nav bar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		      	<img class="brand" alt="Brand" src="img/getheadimg.jpeg" alt="logo" />
+		      	
+		      </a>
+		      
+		    </div>
+		    
+		    
+		    <div class="nav-user-info" id="">
+			  <img class="img-circle head-img" src='<?php echo $userInfo->headimgurl?>' />
+			  <span><?php echo $userInfo->nickname ?></span>
+		  	</div>
+		  </div>
+		  
+		  
+		</nav>
+
+		<!-- main body -->
+		<div ng-app="eventApp" class="container-fluid">
+		<div ng-controller="eventCtrl" class="panel">
+			
+			<div class="panel-heading">
+				<!--<img class="logo" src="img/1244782443.jpg" alt="logo" />-->
+				<h2 style="text-align: center;">评茶报名</h2>
+			</div>
+			<div class="panel-body">
+				 <!--<img class="img-circle img-thumbnail head-img" src="http://wx.qlogo.cn/mmopen/9M0PhLTmTIch24EL86awR6CUoGEpXaaSDFjNruCsQRNULdkJqWkQxIibUchz0h5vTI9jnhWfpStCAuia47xN7ZU2GqtP7FEegN/0" />-->
+				 
+
+<?php
+
+
+//echo "<img class='img-circle head-img' src='{$userInfo->headimgurl}' />";
+//echo "<span class='nickname'>{$userInfo->nickname}</span>";
 
 
 // echo "<p>{$type}___</p>";
@@ -100,6 +118,9 @@ echo "<span class='nickname'>{$userInfo->nickname}</span>";
 
 ?>
 
+
+				
+				
 				<form enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/reg_activity.php">
 					<!--<div class="form-group">
 						<label for="mobile" class="sr-only">mobile:</label>
@@ -171,7 +192,7 @@ echo "<span class='nickname'>{$userInfo->nickname}</span>";
 		<footer>
 			<nav class="navbar">
 				<hr />
-			  <p>&copy; 2016 Company, Inc.</p>
+			  <!--<p>&copy; 2016 Company, Inc.</p>-->
 		</nav>
 		</footer>
 		

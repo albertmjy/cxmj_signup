@@ -13,6 +13,18 @@
 	margin-top: 20px;
 }
 
+img.brand{
+	height: inherit;
+	width: auto;
+}
+.nav-user-info{
+	position: absolute;
+    top: 0;
+    right: 0;
+    display: inline;
+    line-height: 50px;
+}
+
 .head-img{
 	width: 60px;
 	height: auto;
