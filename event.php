@@ -32,46 +32,136 @@
 				<img class="logo" src="img/1244782443.jpg" alt="logo" />
 			</div>
 			<div class="panel-body">
-				<!-- <img class="head-img" src="http://wx.qlogo.cn/mmopen/9M0PhLTmTIch24EL86awR6CUoGEpXaaSDFjNruCsQRNULdkJqWkQxIibUchz0h5vTI9jnhWfpStCAuia47xN7ZU2GqtP7FEegN/0" />
-				 -->
+				 <!--<img class="img-circle img-thumbnail head-img" src="http://wx.qlogo.cn/mmopen/9M0PhLTmTIch24EL86awR6CUoGEpXaaSDFjNruCsQRNULdkJqWkQxIibUchz0h5vTI9jnhWfpStCAuia47xN7ZU2GqtP7FEegN/0" />-->
+				 
 
-<?php 
-// $json = http_get("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5f08243f1028e98e&secret=7ad6fcbb9aff7c8c6fb1ac9995bf0574");
+<?php include "lib/wechat.class.php";
+
+ function http_get($url){
+		$oCurl = curl_init();
+		if(stripos($url,"https://")!==FALSE){
+			curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, FALSE);
+			curl_setopt($oCurl, CURLOPT_SSLVERSION, 1); //CURL_SSLVERSION_TLSv1
+		}
+		curl_setopt($oCurl, CURLOPT_URL, $url);
+		curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
+		$sContent = curl_exec($oCurl);
+		$aStatus = curl_getinfo($oCurl);
+		curl_close($oCurl);
+		if(intval($aStatus["http_code"])==200){
+			return $sContent;
+		}else{
+			return false;
+		}
+	}
+
+$code = $_REQUEST["code"];
+
+$appId = "wx5f08243f1028e98e";
+$appSecret = "7ad6fcbb9aff7c8c6fb1ac9995bf0574";
+
+// get token info 
+$tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$appId}&secret={$appSecret}&code={$code}&grant_type=authorization_code";
+$token = http_get($tokenUrl);
+$tokenInfo = json_decode($token);
+// get user info
+$userInfoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token={$tokenInfo->access_token}&openid={$tokenInfo->openid}&lang=zh_CN";
+$userInfoString = http_get($userInfoUrl);
+$userInfo = json_decode($userInfoString);
 
 
-// $curl = curl_init();
-//     curl_setopt ($curl, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5f08243f1028e98e&secret=7ad6fcbb9aff7c8c6fb1ac9995bf0574");
-//     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-//     $result = curl_exec ($curl);
-//     curl_close ($curl);
-//     echo $result;
-
-$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5f08243f1028e98e&secret=7ad6fcbb9aff7c8c6fb1ac9995bf0574';
-
-$cURL = curl_init();
-
-curl_setopt($cURL, CURLOPT_URL, $url);
-curl_setopt($cURL, CURLOPT_HTTPGET, true);
-
-curl_setopt($cURL, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    'Accept: application/json'
-));
-
-$result = curl_exec($cURL);
-
-curl_close($cURL);
+echo "<img class='img-circle head-img' src='{$userInfo->headimgurl}' />";
+echo "<span class='nickname'>{$userInfo->nickname}</span>";
 
 
+// echo "<p>{$type}___</p>";
+	// $tok = $weObj->getOauthAccessToken();
+	// echo json_encode($tok);
 
-echo "__" . $result ."__" ;
+
+// $tokenUrl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5f08243f1028e98e&secret=7ad6fcbb9aff7c8c6fb1ac9995bf0574";
+// $tk = (string)http_get($tokenUrl);
+// // $userInfoUrl = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$tk}&openid=OPENID&lang=zh_CN";
+// // $userinfo = http_get($userInfoUrl);
+
+// $token = json_decode(trim($tk));
+	
+// $menuUrl = "https://api.weixin.qq.com/cgi-bin/menu/get?access_token={$token->access_token}";
+// $menuInfo = http_get($menuUrl);
 
 
-// echo var_dump($content);
+// echo "<p>{$menuInfo}</p>";
+// echo "----" . $token->access_token . "___token<br /><br /><br /><br />";
+
+
+
+
 ?>
 
-				<div> let's get this?</div>
+				<form enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/reg_activity.php">
+					<!--<div class="form-group">
+						<label for="mobile" class="sr-only">mobile:</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-phone"></span>
+								</span>
+							<input required="required" type="number" class="form-control" name="mobile" id="mobile" placeholder="您的手机号..." />
+						</div>
+					</div>-->
+					<div class="form-group">
+						<span>手机号：</span>
+						<input class="txtbox" />
+					</div>
+					
+					<div class="form-group">
+				    	<span>选择日期：</span>
+				    	<?php include "lib/util.php";
+							$tue = nextTuesday();
+							$sun = nextSunday();
+							$t_text = date_format($tue, "Y-m-d, l");
+							$t_value = date_format($tue, "Y-m-d H:i:s");
+							$s_text = date_format($sun, "Y-m-d, l");
+							$s_value = date_format($sun, "Y-m-d H:i:s");
+							
+//							echo "<option value='". $t_value . "'>" . $t_text . "</option>";
+//							echo "<option value='". $s_value . "'>" . $s_text . "</option>";
+							echo "<label class='label label-default'>{$t_text}</label>";
+							echo "<label class='label label-default'>{$s_text}</label>";
+						?>
+				    </div>
+					
+					
+				    <div class="form-group">
+				    	<span>茶龄（年）：</span><br />
+				    	<label class="label label-default">0-3</label>
+				    	<label class="label label-default">3-5</label>
+				    	<label class="label label-default">5-10</label>
+				    	<label class="label label-default">>10</label>
+				    </div>
+				    
+				    
+				    <div>
+				    	<span>报名人数：</span>
+				    	<span class=""> - </span>
+				    	<input type="text" class="txtbox numbox" placeholder="人数">
+				    	<span class=""> + </span>
+				    </div>
+				    
+				    <!--<div class="input-group">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">-</button>
+				      </span>
+				      <input type="text" class="form-control" placeholder="人数">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">+</button>
+				      </span>
+				    </div>
+				    -->
+				    
+				</form>
+
 
 			</div>
 		

@@ -32,8 +32,16 @@ switch($type) {
 			switch($msgEvent['event']){
 				case Wechat::EVENT_MENU_CLICK:
 					$weObj->text("help eventevent")->reply();
+					break;
 				case Wechat::EVENT_MENU_VIEW:
+					// $myfile = fopen("NEWFILE.txt", "w") or die("Unable to open file!");
+					// $txt = "John Doe\n";
+					// fwrite($myfile, $txt);
+					// fclose($myfile);
+
 					$weObj->text("help view view view")->reply();
+					break;
+
 				default:
 					$weObj->text("Events Exception!")->reply();
 			}

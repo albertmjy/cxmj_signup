@@ -14,7 +14,9 @@
 }
 
 .head-img{
-	width: 100%;
+	width: 60px;
+	height: auto;
+	vertical-align: bottom;
 }
 
 .panel-heading{
@@ -49,4 +51,12 @@ h5{
 }
 .ng-invalid~.glyphicon{
 	color: red;
+}
+
+.txtbox{
+	border: none;
+	border-bottom: solid 1px #aaa;
+}
+.numbox{
+	width: 50px;
 }
