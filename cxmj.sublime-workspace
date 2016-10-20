@@ -1,0 +1,635 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ng-key",
+				"ng-keypress	AngularJS"
+			],
+			[
+				"userIn",
+				"userInfo"
+			],
+			[
+				"userInfo",
+				"userInfoString"
+			],
+			[
+				"user",
+				"userInfoUrl"
+			],
+			[
+				"token",
+				"tokenInfo"
+			],
+			[
+				"utf",
+				"utf8_encode"
+			],
+			[
+				"JSON",
+				"json_decode"
+			],
+			[
+				"toke",
+				"token"
+			],
+			[
+				"josn",
+				"json_encode"
+			],
+			[
+				"jsone",
+				"json_decode"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"dum",
+				"var_dump"
+			],
+			[
+				"dire",
+				"verbose_directive	AngularJS"
+			],
+			[
+				"p",
+				"p	Tag"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"pa",
+				"paris"
+			],
+			[
+				"pari",
+				"parisCtrl"
+			],
+			[
+				"lond",
+				"londonCtrl"
+			],
+			[
+				"$route",
+				"$routeProvider	AngularJS"
+			],
+			[
+				"toString",
+				"toString(radix)	Number"
+			],
+			[
+				"controller",
+				"controller"
+			],
+			[
+				"function",
+				"function without name"
+			],
+			[
+				"conso",
+				"console.log()"
+			],
+			[
+				"functi",
+				"function without name"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "event.php",
+			"settings":
+			{
+				"buffer_size": 6219,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 7538,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/main.css",
+			"settings":
+			{
+				"buffer_size": 1072,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/event.js",
+			"settings":
+			{
+				"buffer_size": 1049,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "search.php",
+			"settings":
+			{
+				"buffer_size": 3857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wechat.php",
+			"settings":
+			{
+				"buffer_size": 1551,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 784.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"json",
+				"Indent JSON"
+			],
+			[
+				"xm",
+				"Pretty JSON: JSON 2 XML"
+			],
+			[
+				"indent",
+				"Indent XML"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:",
+				"Package Control: Disable Package"
+			],
+			[
+				"package control:list",
+				"Package Control: List Packages"
+			],
+			[
+				"package control:instl",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 944.0
+	},
+	"console":
+	{
+		"height": 246.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Workspace/cxmj",
+		"/C/Workspace/cxmj/css",
+		"/C/Workspace/cxmj/js",
+		"/C/Workspace/cxmj/lib",
+		"/C/Workspace/cxmj/model",
+		"/C/Workspace/cxmj/view"
+	],
+	"file_history":
+	[
+		"/C/Workspace/cxmj/search.php",
+		"/C/Workspace/cxmj/junk.php",
+		"/C/Workspace/cxmj/js/main.js",
+		"/C/Workspace/cxmj/js/search.js",
+		"/C/Workspace/cxmj/view/search-result-list.html",
+		"/C/Workspace/cxmj/lib/wechat.class.php",
+		"/C/nginx/conf/nginx.conf",
+		"/C/Users/junyma/Downloads/wx_sample.php",
+		"/C/Users/junyma/Downloads/wx_sample_3rd.php",
+		"/C/Users/junyma/Desktop/CSGetItemDetail.txt",
+		"/C/Users/junyma/Documents/logging/debug.log",
+		"/C/Users/junyma/Desktop/CSGetUserHistory.txt",
+		"/C/Users/junyma/Desktop/CSGetClaimDetail.txt",
+		"/C/Workspace/angular/paris.html",
+		"/C/Workspace/angular/london.html",
+		"/C/Users/junyma/Documents/logging/CS APICS Service/1f92f5c2cd24477fa06446d0e4fa6889_CSFindAdminIdsResponse.txt",
+		"/C/Users/junyma/Documents/logging/CS APICS Service/1f92f5c2cd24477fa06446d0e4fa6889_CSFindAdminIdsRequest.txt",
+		"/C/Users/junyma/Documents/logging/CS APICS Service/55da1c94fd444ef1963ae016b8c0d43f_CSGetUserCoreRequest.txt",
+		"/C/Users/junyma/Documents/logging/CS JSON Service/03f682b106024544ad1653a14ac3305c_https___csapi.vip.ebay.com_csapi_csuserpreference_v1_getUserPreferences_Response.txt",
+		"/C/Users/junyma/Documents/logging/Metadata Cache Service/869d89d0db0a4ffeaec5f067b8bd2c1b_https___csadifdmdcache.corp.ebay.com_Prod_MetadataCache_1.0_Stable_Policy_Response.txt",
+		"/C/Users/junyma/Documents/logging/Metadata Cache Service/929da06bec9047f18bdf0aedcc3696f4_https___csadifdmdcache.corp.ebay.com_Prod_MetadataCache_1.0_Stable_FromEmailAddress_Response.txt",
+		"/C/Users/junyma/Documents/logging/Siebel Service Request Service/5c10bba340a24bbd941cad5a94e6b753_QueryServiceRequest_Input.txt",
+		"/C/Users/junyma/Documents/logging/Siebel Service Request Service/6f2b8071fbaa4307b400203e21563a32_QueryServiceRequest_Input.txt",
+		"/C/Users/junyma/Documents/logging/Siebel Service Request Service/c3d65bebecf247fa82321b517bda4a91_QueryServiceRequest_Input.txt",
+		"/C/Workspace/angular/tstfilter.html",
+		"/C/Workspace/angular/tstctrl.html",
+		"/C/nginx/logs/error.log",
+		"/C/nginx/logs/access.log",
+		"/C/Users/junyma/Desktop/GetWebformContactDetails_Request_Response.txt",
+		"/C/Users/junyma/Desktop/DataPullFromDB.txt",
+		"/C/Workspace/angular/tst.js",
+		"/C/Workspace/html/tst.html",
+		"/C/Workspace/html/tst.js",
+		"/C/nginxphp/start-php-fcgi.bat",
+		"/C/PHP/php.ini",
+		"/C/Workspace/YiiTest/basic/README.md",
+		"/C/Users/junyma/Downloads/composer.phar",
+		"/C/nginx/html/c.php",
+		"/C/Workspace/door/demo/app/documentation/readme.md",
+		"/C/cygwin/home/junyma/workspace/guarder/guarder/README.md",
+		"/C/Workspace/door/demo/index.html",
+		"/C/Users/junyma/Downloads/index (28).php",
+		"/C/Users/junyma/Downloads/index (27).php",
+		"/C/Workspace/door/demo/master/package.json",
+		"/C/nginx-1.10.1/conf/nginx.conf",
+		"/C/nginx-1.10.1/PHP/php.ini",
+		"/C/Users/junyma/Downloads/index (20).php",
+		"/C/Users/junyma/Downloads/index (19).php",
+		"/C/nginx-1.10.1/html/index.php",
+		"/C/Users/junyma/Downloads/php-7.0.10-Win32-VC14-x64/readme-redist-bins.txt",
+		"/C/Workspace/door/demo/master/npm-debug.log",
+		"/C/Workspace/door/demo/master/gulpfile.js",
+		"/C/Workspace/door/demo/master/bower.json",
+		"/C/Workspace/html/tst.css",
+		"/C/Users/junyma/Desktop/davidAPI/CSAPI-soapui-project.xml",
+		"/C/Users/junyma/Downloads/BookStoreTest-soapui-project.xml",
+		"/C/Users/junyma/Desktop/Book-TestCase.xml"
+	],
+	"find":
+	{
+		"height": 64.0
+	},
+	"find_in_files":
+	{
+		"height": 176.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"function http_get",
+			"functioni http_get",
+			"http_get",
+			"getUserId",
+			"getiserid",
+			"sendMessage",
+			":",
+			"apierror",
+			"getUserPreferences",
+			"ERROR",
+			"getUserPreferences",
+			"apierror",
+			"getuserpreferences",
+			"apierror",
+			"/csapi/csuserpreference/v1/getUserPreferences",
+			"ApiError",
+			"error",
+			"CSAPI",
+			"error",
+			"country",
+			"segment",
+			"br",
+			"junk",
+			"$scope",
+			";extension=php_openssl.dll",
+			"error",
+			"/php",
+			"log",
+			"init",
+			"extension_dir",
+			"ext",
+			"php",
+			"install",
+			"wadl",
+			"bookstoreservice",
+			"CSACtivateRuleset",
+			"CSACtivateCaseInAD",
+			"ebaycsapisoapbinding"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "event.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3801,
+								3801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2771.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5747,
+								5747
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3510.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								286,
+								286
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/event.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1049,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "search.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1385,
+								1401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 557.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "wechat.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								841,
+								841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "cxmj.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 71.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 784.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 473.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -7,7 +7,7 @@
 
 		<title></title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/event.css" />
 		<script type="text/javascript" src="js/angular.min.js" ></script>
 	</head>
 
@@ -15,44 +15,54 @@
 
 	<body>
 		<?php include "lib/wechat.class.php";
-function http_get($url){
-		$oCurl = curl_init();
-		if(stripos($url,"https://")!==FALSE){
-			curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
-			curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, FALSE);
-			curl_setopt($oCurl, CURLOPT_SSLVERSION, 1); //CURL_SSLVERSION_TLSv1
-		}
-		curl_setopt($oCurl, CURLOPT_URL, $url);
-		curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
-		$sContent = curl_exec($oCurl);
-		$aStatus = curl_getinfo($oCurl);
-		curl_close($oCurl);
-		if(intval($aStatus["http_code"])==200){
-			return $sContent;
-		}else{
-			return false;
-		}
-	}
+// function http_get($url){
+// 		$oCurl = curl_init();
+// 		if(stripos($url,"https://")!==FALSE){
+// 			curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
+// 			curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, FALSE);
+// 			curl_setopt($oCurl, CURLOPT_SSLVERSION, 1); //CURL_SSLVERSION_TLSv1
+// 		}
+// 		curl_setopt($oCurl, CURLOPT_URL, $url);
+// 		curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1 );
+// 		$sContent = curl_exec($oCurl);
+// 		$aStatus = curl_getinfo($oCurl);
+// 		curl_close($oCurl);
+// 		if(intval($aStatus["http_code"])==200){
+// 			return $sContent;
+// 		}else{
+// 			return false;
+// 		}
+// 	}
 
-$code = $_REQUEST["code"];
+// $code = $_REQUEST["code"];
 
-$appId = "wx5f08243f1028e98e";
-$appSecret = "7ad6fcbb9aff7c8c6fb1ac9995bf0574";
+// $appId = "wx5f08243f1028e98e";
+// $appSecret = "7ad6fcbb9aff7c8c6fb1ac9995bf0574";
 
-// get token info 
-$tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$appId}&secret={$appSecret}&code={$code}&grant_type=authorization_code";
-$token = http_get($tokenUrl);
-$tokenInfo = json_decode($token);
-// get user info
-$userInfoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token={$tokenInfo->access_token}&openid={$tokenInfo->openid}&lang=zh_CN";
-$userInfoString = http_get($userInfoUrl);
-$userInfo = json_decode($userInfoString);
+// // get token info 
+// $tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$appId}&secret={$appSecret}&code={$code}&grant_type=authorization_code";
+// $token = http_get($tokenUrl);
+// $tokenInfo = json_decode($token);
+// // get user info
+// $userInfoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token={$tokenInfo->access_token}&openid={$tokenInfo->openid}&lang=zh_CN";
+// $userInfoString = http_get($userInfoUrl);
+// $userInfo = json_decode($userInfoString);
 
 
 ?>
 
 		
-		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 		
 	<!-- top nav bar -->
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -121,23 +131,24 @@ $userInfo = json_decode($userInfoString);
 
 				
 				
-				<form enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/reg_activity.php">
-					<!--<div class="form-group">
-						<label for="mobile" class="sr-only">mobile:</label>
-						<div class="input-group">
-							<span class="input-group-addon">
-							<span class="glyphicon glyphicon-phone"></span>
-								</span>
-							<input required="required" type="number" class="form-control" name="mobile" id="mobile" placeholder="您的手机号..." />
-						</div>
-					</div>-->
+				<form class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/reg_activity.php" novalidate>
 					<div class="form-group">
 						<span>手机号：</span>
-						<input class="txtbox" />
+						<input type="text" ng-model="mob" class="txtbox" name="mob" ng-keypress="numOnly($event)" maxlength="11" ng-blur="mobileValidation(mob)" required />
+						<span ng-show="eventForm.mob.$dirty">
+							<span ng-show="mobValid" class="glyphicon glyphicon-ok"></span>
+							<span ng-show="!mobValid" class="glyphicon glyphicon-exclamation-sign"></span>
+						</span>
+
+						<div ng-show="eventForm.mob.$dirty && eventForm.mob.$invalid">
+							<span ng-show="eventForm.mob.$error.required">Pls fill your mobile number</span>
+						</div>
+
+
 					</div>
 					
 					<div class="form-group">
-				    	<span>选择日期：</span>
+				    	<p>选择日期：</p>
 				    	<?php include "lib/util.php";
 							$tue = nextTuesday();
 							$sun = nextSunday();
@@ -148,39 +159,31 @@ $userInfo = json_decode($userInfoString);
 							
 //							echo "<option value='". $t_value . "'>" . $t_text . "</option>";
 //							echo "<option value='". $s_value . "'>" . $s_text . "</option>";
-							echo "<label class='label label-default'>{$t_text}</label>";
-							echo "<label class='label label-default'>{$s_text}</label>";
+							echo "<label class='sel-label'>{$t_text}</label>";
+							echo "<label class='sel-label'>{$s_text}</label>";
 						?>
 				    </div>
 					
 					
 				    <div class="form-group">
-				    	<span>茶龄（年）：</span><br />
-				    	<label class="label label-default">0-3</label>
-				    	<label class="label label-default">3-5</label>
-				    	<label class="label label-default">5-10</label>
-				    	<label class="label label-default">>10</label>
+				    	<p>茶龄（年）：</p>
+				    	<label class="sel-label">0-3</label>
+				    	<label class="sel-label">3-5</label>
+				    	<label class="sel-label">5-10</label>
+				    	<label class="sel-label">>10</label>
 				    </div>
 				    
 				    
-				    <div>
+				    <div class="form-group">
 				    	<span>报名人数：</span>
-				    	<span class=""> - </span>
-				    	<input type="text" class="txtbox numbox" placeholder="人数">
-				    	<span class=""> + </span>
+				    	<button class="adj-button"> - </button>
+				    	<input type="number" class="txtbox numbox" placeholder="人数">
+				    	<button class="adj-button"> + </button>
 				    </div>
 				    
-				    <!--<div class="input-group">
-				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="button">-</button>
-				      </span>
-				      <input type="text" class="form-control" placeholder="人数">
-				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="button">+</button>
-				      </span>
+				    <div class="submit">
+				    	<button type="submit" class="btn btn-info btn-block">确认报名！</button>
 				    </div>
-				    -->
-				    
 				</form>
 
 
