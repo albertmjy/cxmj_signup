@@ -111,6 +111,9 @@
 						      <!--<div class="input-group-addon">year</div>-->
 						    </div>
 						  </div>
+
+
+						  
 					  </div>
 					  	<?php
 //					  		$days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -149,6 +152,7 @@
 					  	?>
 					  
 					<button type="submit" class="btn btn-info btn-block">确认报名！</button>
+					
 				</form>
 				
 				<!--<form class="form" action="">

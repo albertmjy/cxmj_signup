@@ -24,6 +24,9 @@ $info["tea_age"] = $_REQUEST["tea_age"];
 $info["amount"] = $_REQUEST["amount"];
 $info["date"] = trim($_REQUEST["date"]);
 
+// echo var_dump($info);
+// phpinfo();
+// exit();
 
 $name = $info["name"];
 $mobile = $info["mobile"];
