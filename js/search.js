@@ -5,7 +5,6 @@
 //		alert('hehe')
 //	}
 //})
-
 var app = angular.module("search",[])
 
 

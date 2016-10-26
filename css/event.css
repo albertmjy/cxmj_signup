@@ -44,6 +44,31 @@ img.brand{
 	min-width: 3.5em;
     text-align: center;
     font-size: 10pt;
+
+    /*font-weight: bolder;
+    cursor: pointer;
+    display: inline-block;*/
+}
+
+.sel-label>input[type=radio]{
+	display: none;
+}
+
+.adj-button{
+	/*border: solid 1px #999;*/
+	border: none;
+	border-radius: 3px;
+	/*padding: 5px;
+	color: #c5c2bd;*/
+    text-align: center;
+    font-size: 10pt;
+    /*background: none;*/
+   background: #ddd;
+   box-shadow: 0px 0px 1px;
+}
+
+.submit{
+	margin-top: 30px;
 }
 
 .panel-heading{
@@ -86,4 +111,5 @@ h5{
 }
 .numbox{
 	width: 50px;
+	text-align: center
 }
