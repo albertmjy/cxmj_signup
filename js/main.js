@@ -81,7 +81,5 @@ $(function(){
 		
 		return now
 	}
-	
-	
 
 })
