@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/event.css" />
 		<script type="text/javascript" src="js/angular.min.js" ></script>
+		<script type="text/javascript" src="js/angular-touch.js" ></script>
 		<script type="text/javascript" src="js/fastclick.js"></script>
 		<script type="text/javascript">
 			window.addEventListener( "load", function() {
@@ -173,7 +174,7 @@ $userInfo = json_decode($userInfoString);
 					
 					<!-- <input type="number" name="uiui"> -->
 					<div  ng-cloak class="form-group">
-				    	<p>选择日期：</p>
+				    	<p>参与时间：</p>
 				    	<?php include "lib/util.php";
 // 							$tue = nextTuesday();
 // 							$sun = nextSunday();

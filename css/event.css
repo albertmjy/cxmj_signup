@@ -108,6 +108,7 @@ h5{
 .txtbox{
 	border: none;
 	border-bottom: solid 1px #aaa;
+	border-radius: 0;
 }
 .numbox{
 	width: 50px;
