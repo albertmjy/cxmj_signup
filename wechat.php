@@ -13,7 +13,7 @@ $type = $weObj->getRev()->getRevType();
 switch($type) {
 	case Wechat::MSGTYPE_TEXT:
 			if($weObj->getRevContent() == "wifi"){
-				$weObj->text("wifi pass")->reply();
+				$weObj->text("cxmj518518")->reply();
 				break;
 			}
 		
@@ -31,7 +31,7 @@ switch($type) {
 			$msgEvent = $weObj->getRevEvent();
 			switch($msgEvent['event']){
 				case Wechat::EVENT_MENU_CLICK:
-					$weObj->text("help eventevent")->reply();
+					$weObj->text("cxmj518518")->reply();
 					break;
 				case Wechat::EVENT_MENU_VIEW:
 					// $myfile = fopen("NEWFILE.txt", "w") or die("Unable to open file!");
