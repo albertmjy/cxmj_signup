@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"date",
+				"dateSelected"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"_",
+				"_nextTuesdayDate"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"ngcl",
+				"ng-click	AngularJS"
+			],
+			[
 				"ng-key",
 				"ng-keypress	AngularJS"
 			],
@@ -111,47 +143,47 @@
 			"file": "event.php",
 			"settings":
 			{
-				"buffer_size": 6179,
+				"buffer_size": 9186,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 7538,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/main.css",
-			"settings":
-			{
-				"buffer_size": 1072,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/event.js",
 			"settings":
 			{
-				"buffer_size": 1406,
+				"buffer_size": 4315,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/search.js",
+			"file": "model/reg_activity.php",
 			"settings":
 			{
-				"buffer_size": 4353,
-				"line_ending": "Windows"
+				"buffer_size": 2919,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 7555,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/event.css",
+			"settings":
+			{
+				"buffer_size": 1506,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "wechat.php",
 			"settings":
 			{
-				"buffer_size": 1551,
+				"buffer_size": 1547,
 				"line_ending": "Unix"
 			}
 		}
@@ -242,10 +274,13 @@
 	],
 	"file_history":
 	[
-		"/C/Workspace/cxmj/search.php",
-		"/C/Workspace/cxmj/junk.php",
-		"/C/Workspace/cxmj/js/main.js",
+		"/C/Workspace/cxmj/js/fastclick.js",
+		"/C/Workspace/cxmj/model/mysql.php",
 		"/C/Workspace/cxmj/js/search.js",
+		"/C/Workspace/cxmj/js/main.js",
+		"/C/Workspace/cxmj/search.php",
+		"/C/Workspace/cxmj/css/main.css",
+		"/C/Workspace/cxmj/junk.php",
 		"/C/Workspace/cxmj/view/search-result-list.html",
 		"/C/Workspace/cxmj/lib/wechat.class.php",
 		"/C/nginx/conf/nginx.conf",
@@ -316,6 +351,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scopeTeaAgeRange",
+			"angular",
+			"myAPp",
 			"/>\n",
 			"function http_get",
 			"functioni http_get",
@@ -372,7 +410,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -381,102 +419,44 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6179,
+						"buffer_size": 9186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4497,
-								4497
+								577,
+								577
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3276.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7538,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4445,
-								4445
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2340.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1072,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								286,
-								286
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
 					"file": "js/event.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1406,
+						"buffer_size": 4315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								987,
-								987
+								2823,
+								2823
 							]
 						],
 						"settings":
@@ -485,7 +465,65 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 390.0,
+						"translation.y": 160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "model/reg_activity.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4093,
+								4093
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2047.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -493,31 +531,30 @@
 				},
 				{
 					"buffer": 4,
-					"file": "js/search.js",
-					"semi_transient": true,
+					"file": "css/event.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4353,
+						"buffer_size": 1506,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1707,
-								1719
+								1441,
+								1441
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1872.0,
+						"translation.y": 2569.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -526,15 +563,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1551,
+						"buffer_size": 1547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								841,
-								841
+								592,
+								592
 							]
 						],
 						"settings":
@@ -543,10 +580,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 234.0,
+						"translation.y": 174.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -554,7 +591,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 37.0
 	},
 	"input":
 	{
