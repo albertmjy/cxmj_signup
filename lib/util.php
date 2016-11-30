@@ -35,5 +35,10 @@ function nextSunday(){
 //	return $date;
 	
 }
+
+function nextFriday(){
+	$date = date_create("next Friday");
+	return $date;
+}
 	
 ?>

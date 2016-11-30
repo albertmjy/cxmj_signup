@@ -99,17 +99,23 @@
 						      	<?php include "lib/util.php";
 									$tue = nextTuesday();
 									$sun = nextSunday();
+									$fri = nextFriDay();
 									$t_text = date_format($tue, "Y-m-d, l");
 									$t_value = date_format($tue, "Y-m-d H:i:s");
 									$s_text = date_format($sun, "Y-m-d, l");
 									$s_value = date_format($sun, "Y-m-d H:i:s");
-									
+									$f_text = date_format($fri, "Y-m-d, l");
+									$f_value = date_format($fri, "Y-m-d H:i:s");
+
 									echo "<option value='". $t_value . "'>" . $t_text . "</option>";
+									echo "<option value='". $f_value . "'>" . $f_text . "</option>";
 									echo "<option value='". $s_value . "'>" . $s_text . "</option>";
+									
 								?>
 						      </select>
-						      <!--<div class="input-group-addon">year</div>-->
+						      
 						    </div>
+						    <!-- <div class="">周五也能报名啦！</div> -->
 						  </div>
 
 
