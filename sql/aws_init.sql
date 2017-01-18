@@ -72,7 +72,7 @@ delete from tea_activity where mobile=13501777753 and Date(activity_date)=Date(N
 
 select name, a.mobile, amount, tea_age, Date(activity_date) as dt from tea_activity as a left join user as u on a.mobile=u.mobile where activity_date>=NOW() order by activity_date;
 
-select * from tea_activity as a, user as u where u.mobile=a.mobile and activity_date>=NOW() order by activity_date;
+select * from tea_activity as a, user as u where u.mobile=a.mobile and activity_date>=Date(NOW()) order by activity_date;
 
 select * from tea_activity;
 delete from tea_activity where activity_date='0000-00-00 00:00:00';
@@ -81,3 +81,6 @@ select * from tea_activity as a left join user as u on a.mobile=u.mobile order b
 
 
 update user set name='火娃' where mobile=
+
+
+select Date(now())

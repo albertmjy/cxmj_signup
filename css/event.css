@@ -1,3 +1,7 @@
+a:focus, a:visited, a:active, a:hover{
+	text-decoration:none;
+}
+
 .navbar-header{
 	/*background: #AF772F;*/
 }
@@ -31,19 +35,31 @@ img.brand{
 	vertical-align: bottom;
 }
 
+.header{
+	background-color: #F5FFF7;
+	margin: 0 -20px;
+	padding: 1px;
+}
+
+.panel-body{
+	padding:10px;
+}
+
 .event-form{
+	color:#9A5100;
 	font-family: "微软雅黑";
 	font-size: 12pt;
 }
 
 .sel-label{
-	border-radius: 5px;
+	border-radius: 2px;
 	border: solid 1px #999;
 	padding: 5px;
 	color: #c5c2bd;
 	min-width: 3.5em;
     text-align: center;
     font-size: 10pt;
+    min-width:24%;
 
     /*font-weight: bolder;
     cursor: pointer;
@@ -92,6 +108,9 @@ h5{
 	display: flex;
 	display: -webkit-flex;
 }
+.space-bet{
+	justify-content:space-between;
+}
 
 .input-clear{
 	background-color: transparent;
@@ -105,6 +124,25 @@ h5{
 	color: red;
 }
 
+.nowrap{
+	white-space: nowrap;
+}
+
+.item-name{
+	display:inline-block;
+	width: 20%;
+	vertical-align:bottom;
+	text-align:justify;
+	-moz-text-align-last:justify;
+	text-align-last:justify;
+	-webkit-text-align-last:justify;
+}
+
+.item-value{
+	display:inline-block;
+	width:70%;	
+}
+
 .txtbox{
 	border: none;
 	border-bottom: solid 1px #aaa;
@@ -112,5 +150,7 @@ h5{
 }
 .numbox{
 	width: 50px;
-	text-align: center
+	text-align: center;
+	font-size: 16pt;
 }
+

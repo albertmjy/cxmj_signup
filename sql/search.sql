@@ -74,8 +74,22 @@ create table pricecopy like price;
 load data local infile '/Users/albert/Downloads/t1.txt' into table tea character set utf8 fields terminated by '\t';
 load data local infile '/Users/albert/Downloads/t2.txt' into table price character set utf8 fields terminated by '\t';
 
-select * from tea
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/yiMuTang/table_tea.txt' into table tea character set utf8 fields terminated by '\t';
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/yiMuTang/table_price.txt' into table price character set utf8 fields terminated by '\t';
+
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/douJi/table_tea.txt' into table tea character set utf8 fields terminated by '\t';
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/douJi/table_price.txt' into table price character set utf8 fields terminated by '\t';
+
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/daYi/table_tea.txt' into table tea character set utf8 fields terminated by '\t';
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/daYi/table_price.txt' into table price character set utf8 fields terminated by '\t';
+
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/shuangChen/table_tea.txt' into table tea character set utf8 fields terminated by '\t';
+load data local infile '/Users/albert/Documents/cxmj_docs/tea_material/shuangChen/table_price.txt' into table price character set utf8 fields terminated by '\t';
+
+select * from teacopy
 select * from pricecopy
 delete from pricecopy
 
 select * from mysql.user;
+
+show create table tea

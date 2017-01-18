@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Cache-control" content="public">
 
 		<title></title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -57,7 +58,7 @@
 						    <div class="input-group">
 						      <div class="input-group-addon">茶龄</div>
 						      <select required="required" id="tea_age" name="tea_age" class="form-control">
-						      	<option value="">－选择－</option>
+						      	<option>－选择－</option>
 						      	<option value="0"> 少于 1 年</option>
 						      	<option value="1">1 年</option>
 						      	<option value="2">2 年</option>
@@ -100,21 +101,27 @@
 									$tue = nextTuesday();
 									$sun = nextSunday();
 									$fri = nextFriDay();
+									$sat = nextSaturday();
+
+
 									$t_text = date_format($tue, "Y-m-d, l");
 									$t_value = date_format($tue, "Y-m-d H:i:s");
 									$s_text = date_format($sun, "Y-m-d, l");
 									$s_value = date_format($sun, "Y-m-d H:i:s");
 									$f_text = date_format($fri, "Y-m-d, l");
 									$f_value = date_format($fri, "Y-m-d H:i:s");
+									$sat_text = date_format($sat, "Y-m-d, l");
+									$sat_value = date_format($sat, "Y-m-d H:i:s");
 
 									echo "<option value='". $t_value . "'>" . $t_text . "</option>";
 									echo "<option value='". $f_value . "'>" . $f_text . "</option>";
-									echo "<option value='". $s_value . "'>" . $s_text . "</option>";
+									echo "<option value='". $sat_value . "'> 茶会-" . $sat_text . "</option>";
+									// echo "<option value='". $s_value . "'>" . $s_text . "</option>";
 									
 								?>
 						      </select>
-						      
 						    </div>
+						    <div>本周六为 2016 年前最后一次茶会！</div>
 						    <!-- <div class="">周五也能报名啦！</div> -->
 						  </div>
 

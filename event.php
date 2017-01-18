@@ -4,8 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-control" content="public">
 
-		<title></title>
+		<title>茶昔茗今 - 评茶报名</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/event.css" />
 		<script type="text/javascript" src="js/angular.min.js" ></script>
@@ -22,6 +23,7 @@
 
 
 	<body>
+		<img width='0' height='0' style='position:absolute' src="img/124478443.jpg" />
 		<?php include "lib/wechat.class.php";
 function http_get($url){
 		$oCurl = curl_init();
@@ -98,8 +100,10 @@ $userInfo = json_decode($userInfoString);
 		<div ng-controller="eventCtrl" class="panel">
 			
 			<div class="panel-heading">
-				<!--<img class="logo" src="img/1244782443.jpg" alt="logo" />-->
-				<h2 style="text-align: center;">评茶报名</h2>
+				<div class='header'>
+					<!--<img class="logo" src="img/1244782443.jpg" alt="logo" />-->
+					<h2 style="text-align: center;color:#F3840A;"><img style='height:15px;vertical-align:middle' src='img/tealeaf.jpg'>评茶报名</h2>
+				</div>
 			</div>
 			<div class="panel-body">
 				 <!--<img class="img-circle img-thumbnail head-img" src="http://wx.qlogo.cn/mmopen/9M0PhLTmTIch24EL86awR6CUoGEpXaaSDFjNruCsQRNULdkJqWkQxIibUchz0h5vTI9jnhWfpStCAuia47xN7ZU2GqtP7FEegN/0" />-->
@@ -138,10 +142,13 @@ $userInfo = json_decode($userInfoString);
 
 
 				
-				<form class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/reg_activity.php" novalidate >
-					<div class="form-group">
-						<span>称呼：</span>
-						<input type="text" ng-model="name" class="txtbox" name="name" ng-pattern=/^[0-9a-zA-Z_\u4e00-\u9eff]+$/ required  />
+				<form ng-submit='cacheData()' class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/new_reg_activity.php" novalidate >
+					
+					<div class="form-group nowrap">
+
+						<span class='item-name'>称呼</span>:
+						<input type="text" ng-model="name" class="txtbox item-value" name="name" ng-pattern=/^[0-9a-zA-Z_\u4e00-\u9eff]+$/ required  />
+
 						<span  ng-cloak ng-show="eventForm.name.$touched" style="margin-left:-22px" >
 							<span ng-show="eventForm.name.$valid" class="glyphicon glyphicon-ok-sign" style="color:green"></span>
 						</span>
@@ -149,9 +156,9 @@ $userInfo = json_decode($userInfoString);
 							<span ng-show="eventForm.name.$error.pattern">不允许特殊字符</span>
 						</div>
 					</div>
-					<div class="form-group">
-						<span>手机号：</span>
-						<input type="number" ng-model="mobile" class="txtbox" name="mobile" ng-keypress="" ng-maxlength="11" ng-blur="mobileValidation(mobile)" required />
+					<div class="form-group nowrap">
+						<span class='item-name'>手机号</span>:
+						<input type="number" ng-model="mobile" class="txtbox item-value" name="mobile" ng-keypress="" ng-maxlength="11" ng-blur="mobileValidation(mobile)" required />
 						<span  ng-cloak ng-show="eventForm.mobile.$touched" style="margin-left:-22px" >
 							<span ng-show="mobValid" class="glyphicon glyphicon-ok-sign" style="color:green"></span>
 							<span ng-show="!mobValid" class="glyphicon glyphicon-exclamation-sign" style="color:red"></span>
@@ -196,8 +203,11 @@ $userInfo = json_decode($userInfoString);
 
 						?>
 
-						<label ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}">{{next_tuesday}}</label>
+						<!-- <label ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}">{{next_tuesday}}</label>
 						<label ng-click="newSelectDate(0)" class="sel-label" ng-class="{'label-success':dateSelected[0]}">{{next_sunday}}</label>
+						 -->
+						<button type='button' ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}"><span>{{next_tuesday}}</span></button>
+						<button type='button' ng-click="newSelectDate(0)" class="sel-label" ng-class="{'label-success':dateSelected[0]}"><span>{{next_sunday}}</span></button>
 						<input type="hidden" name="date" ng-model='date' value="{{date}}" required />
 				    </div>
 					
@@ -205,9 +215,14 @@ $userInfo = json_decode($userInfoString);
 
 				    <div  ng-cloak class="form-group">
 				    	<p>茶龄（年）：</p>
-				    	<label ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}">
+				    	<!-- <label ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}">
 				    		{{x}}
-				    	</label>
+				    	</label> -->
+				    	<div class='flex space-bet'>
+					    	<button type="button" ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}">
+					    		<span>{{x}}</span>
+					    	</button>
+				    	</div>
 						<input type="hidden" name="tea_age" ng-model='tea_age' value="{{tea_age}}" required />
 
 				    	<!-- <input ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}" name="tea_age" ng-model='x'/>
@@ -222,9 +237,9 @@ $userInfo = json_decode($userInfoString);
 				   
 				    <div class="form-group">
 				    	<span>报名人数：</span>
-				    	<button type="button" class="adj-button" ng-click="minusPerson()"><span class="glyphicon glyphicon-minus"></span></button>
+				    	<button type='button' href="#" class="adj-button btn btn-default" ng-click="minusPerson()"><span class="glyphicon glyphicon-minus"></span></button>
 				    	<input type="number" class="txtbox numbox" placeholder="人数" name="amount" ng-model='amount' readonly value="100">
-				    	<button type="button" ng-click="pulsPerson()" class="adj-button"><span class="glyphicon glyphicon-plus"></span></button>
+				    	<button type='button' href="#" ng-click="pulsPerson()" class="adj-button btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 
 				    </div>
 				    

@@ -40,5 +40,10 @@ function nextFriday(){
 	$date = date_create("next Friday");
 	return $date;
 }
+
+function nextSaturday(){
+	$date = date_create("next Saturday");
+	return $date;
+}
 	
 ?>

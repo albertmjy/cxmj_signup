@@ -1,7 +1,16 @@
 
-var app = angular.module('eventApp', [])
 
+
+
+
+var app = angular.module('eventApp', [])
 app.controller('eventCtrl', function($scope, $http){
+	// load form data if any
+	var lst = localStorage
+	$scope.name = lst.getItem("name")
+	$scope.mobile = parseInt(lst.getItem("mobile"))
+
+
 	// allow only number input, call for each key press
 	$scope.numOnly = function(e){
 		var keycode = e.which || e.keycode
@@ -68,6 +77,8 @@ app.controller('eventCtrl', function($scope, $http){
 			$scope.dateSelected[i] = false
 		}
 		$scope.dateSelected[d] = true
+
+		return false
 	}
 
 	//  tea age select event
@@ -85,6 +96,8 @@ app.controller('eventCtrl', function($scope, $http){
 		$scope.teaAgeSelected[idx] = true
 
 		console.log($scope.tea_age)
+
+		return false
 	}
 
 	// amount click event
@@ -105,10 +118,18 @@ app.controller('eventCtrl', function($scope, $http){
 	// submit event
 	// $scope.teaAge = 1
 	$scope.submit = function(valid){
-
 		if (valid){
 			document.eventForm.submit()
 		}
+	}
+
+	$scope.cacheData = function(){
+		var lst = localStorage
+		lst.setItem("name", $scope.name)
+		lst.setItem("mobile", $scope.mobile)
+		lst.setItem("date", $scope.date)
+		lst.setItem("tea_age", $scope.tea_age)
+		lst.setItem("amount", $scope.amount)
 	}
 })
 
