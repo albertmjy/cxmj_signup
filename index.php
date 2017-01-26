@@ -113,15 +113,15 @@
 									$sat_text = date_format($sat, "Y-m-d, l");
 									$sat_value = date_format($sat, "Y-m-d H:i:s");
 
-									echo "<option value='". $t_value . "'>" . $t_text . "</option>";
-									echo "<option value='". $f_value . "'>" . $f_text . "</option>";
-									echo "<option value='". $sat_value . "'> 茶会-" . $sat_text . "</option>";
+									echo "<option value='". $t_value . "'>2016最后一场-" . $t_text . "</option>";
+									// echo "<option value='". $f_value . "'>" . $f_text . "</option>";
+									// echo "<option value='". $sat_value . "'> 茶会-" . $sat_text . "</option>";
 									// echo "<option value='". $s_value . "'>" . $s_text . "</option>";
 									
 								?>
 						      </select>
 						    </div>
-						    <div>本周六为 2016 年前最后一次茶会！</div>
+						    <div>1月22日（周二），本次茶评为2016年最后一次！</div>
 						    <!-- <div class="">周五也能报名啦！</div> -->
 						  </div>
 

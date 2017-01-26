@@ -46,8 +46,8 @@ function http_get($url){
 
 $code = $_REQUEST["code"];
 
-$appId = "wx5f08243f1028e98e";
-$appSecret = "7ad6fcbb9aff7c8c6fb1ac9995bf0574";
+$appId = "wx714f5947cbbc1c57";
+$appSecret = "fe536bccab50fbc6131836ed88588dc2";
 
 // get token info 
 $tokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$appId}&secret={$appSecret}&code={$code}&grant_type=authorization_code";
@@ -110,7 +110,6 @@ $userInfo = json_decode($userInfoString);
 				 
 
 <?php
-
 
 //echo "<img class='img-circle head-img' src='{$userInfo->headimgurl}' />";
 //echo "<span class='nickname'>{$userInfo->nickname}</span>";
@@ -206,24 +205,33 @@ $userInfo = json_decode($userInfoString);
 						<!-- <label ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}">{{next_tuesday}}</label>
 						<label ng-click="newSelectDate(0)" class="sel-label" ng-class="{'label-success':dateSelected[0]}">{{next_sunday}}</label>
 						 -->
-						<button type='button' ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}"><span>{{next_tuesday}}</span></button>
+						<!-- <button type='button' ng-click="newSelectDate(2)" class="sel-label" ng-class="{'label-success':dateSelected[2]}"><span>{{next_tuesday}}</span></button>
 						<button type='button' ng-click="newSelectDate(0)" class="sel-label" ng-class="{'label-success':dateSelected[0]}"><span>{{next_sunday}}</span></button>
-						<input type="hidden" name="date" ng-model='date' value="{{date}}" required />
+						<input type="hidden" name="date" ng-model='date' value="{{date}}" required /> -->
+
+						<div class="btn-group btn-block" data-toggle="buttons" >
+						  <label class="btn btn-success col-xs-6" ng-click='dateSelect()' >
+						    <input type="radio" name="date" ng-model='sel_date' id="date1" autocomplete="off" value='{{next_tuesday}}' > {{next_tuesday}}
+						  </label>
+						  <label class="btn btn-success col-xs-6" ng-click='dateSelect()' >
+						    <input type="radio" name="date" ng-model='sel_date' id="date2" autocomplete="off" value='{{next_sunday}}' > {{next_sunday}}
+						  </label>
+						</div>
 				    </div>
 					
-					
+
 
 				    <div  ng-cloak class="form-group">
 				    	<p>茶龄（年）：</p>
 				    	<!-- <label ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}">
 				    		{{x}}
 				    	</label> -->
-				    	<div class='flex space-bet'>
+				    	<!-- <div class='flex space-bet'>
 					    	<button type="button" ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}">
 					    		<span>{{x}}</span>
 					    	</button>
 				    	</div>
-						<input type="hidden" name="tea_age" ng-model='tea_age' value="{{tea_age}}" required />
+						<input type="hidden" name="tea_age" ng-model='tea_age' value="{{tea_age}}" required /> -->
 
 				    	<!-- <input ng-click="selectTeaAge($index)" ng-repeat="x in tea_age_range" class="sel-label" ng-class="{'label-success':teaAgeSelected[$index]}" name="tea_age" ng-model='x'/>
  -->
@@ -234,6 +242,25 @@ $userInfo = json_decode($userInfoString);
 
 				    </div>
 				    
+				    <div  ng-cloak class="form-group">
+				    	<div class="btn-group btn-block" data-toggle="buttons" ng-init=''>
+				    		<label class="btn btn-success col-xs-3" ng-repeat='(i, x) in tea_age_range' ng-click='tst()' ng-class="{'active':($index==idx)}">
+							    <input type="radio" name="tea_age_in_range" ng-model="tea_age_arr" id="option{{$index}}" autocomplete="off" value='{{x}}' ng-checked="$index==idx"> {{x}}
+							  </label>
+
+						  <!-- <label class="btn btn-success active">
+						    <input type="radio" name="options" id="option1" autocomplete="off" checked> 0-3
+						  </label>
+						  <label class="btn btn-success">
+						    <input type="radio" name="options" id="option2" autocomplete="off"> 3-5
+						  </label>
+						  <label class="btn btn-success">
+						    <input type="radio" name="options" id="option3" autocomplete="off"> 5-10
+						  </label> -->
+						</div>
+				    </div>
+
+
 				   
 				    <div class="form-group">
 				    	<span>报名人数：</span>
@@ -245,7 +272,7 @@ $userInfo = json_decode($userInfoString);
 				    
 				    <div class="submit">
 
-				    	<button type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || eventForm.$invalid">确认报名！</button>
+				    	<button type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || !dateSelected || eventForm.$invalid ">确认报名！</button>
 				    </div>
 				</form>
 

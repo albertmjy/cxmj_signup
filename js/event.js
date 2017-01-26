@@ -5,11 +5,25 @@
 
 var app = angular.module('eventApp', [])
 app.controller('eventCtrl', function($scope, $http){
-	// load form data if any
-	var lst = localStorage
-	$scope.name = lst.getItem("name")
-	$scope.mobile = parseInt(lst.getItem("mobile"))
+	// init process
+	$scope.hasTeaAge = false
+	$scope.hasDate = false
+	$scope.init = function(){
+		// load form data if any
+		var lst = localStorage
+		$scope.name = lst.getItem("name")
+		$scope.mobile = parseInt(lst.getItem("mobile"))
+		$scope.idx = parseInt(lst.getItem("tea_age_in_range_idx"))
+		if ($scope.idx){
+			$scope.hasTeaAge = true
+		}
+	}
+	$scope.init()
 
+
+	$scope.tst = function(){
+		console.log($scope.tea_age_arr)
+	}
 
 	// allow only number input, call for each key press
 	$scope.numOnly = function(e){
@@ -50,6 +64,10 @@ app.controller('eventCtrl', function($scope, $http){
 		}
 	}
 
+	// incase cached mobile
+	if ($scope.mobile){
+		$scope.mobileValidation($scope.mobile)
+	}
 	// // date select event
 	// // $scope.dateSelected = {"tue": false, "sun": false}
 	// $scope.dateSelected = []
@@ -70,6 +88,7 @@ app.controller('eventCtrl', function($scope, $http){
 	$scope.next_tuesday = _nextTuesdayDate().toJSON().substr(0,10) + "," + daysCN[2]
 	$scope.next_sunday = _nextSundayDate().toJSON().substr(0,10) + "," + daysCN[0]
 
+	// @Deprecate
 	$scope.newSelectDate = function(d){
 		$scope.date = (d==0?$scope.next_sunday:$scope.next_tuesday)
 		// reset all
@@ -80,7 +99,12 @@ app.controller('eventCtrl', function($scope, $http){
 
 		return false
 	}
+	$scope.dateSelected = false
+	$scope.dateSelect = function(){
+		$scope.dateSelected = true
+	}
 
+	// @Deprecate
 	//  tea age select event
 	$scope.tea_age_range = ['0-3', '3-5', '5-10', '>10']
 	$scope.teaAgeSelected = []
@@ -128,9 +152,20 @@ app.controller('eventCtrl', function($scope, $http){
 		lst.setItem("name", $scope.name)
 		lst.setItem("mobile", $scope.mobile)
 		lst.setItem("date", $scope.date)
-		lst.setItem("tea_age", $scope.tea_age)
+
+		// do this since bootstrop didn't directly set the value to btn-like checkbox, the status never changed
+		// manually save the value
+		for (var i = 0; i < eventForm.tea_age_in_range.length; i++) {
+			if (eventForm.tea_age_in_range[i].checked){
+				lst.setItem("tea_age_in_range_idx", i)
+			}
+		};
+		lst.setItem("tea_age_in_range", eventForm.tea_age_in_range.value)
+
 		lst.setItem("amount", $scope.amount)
 	}
+
+
 })
 
 

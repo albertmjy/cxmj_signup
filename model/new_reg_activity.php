@@ -15,7 +15,7 @@ function userExists($mysql, $mobile){
 
 $name = $_REQUEST["name"];
 $mobile = $_REQUEST["mobile"];
-$tea_age = $_REQUEST["tea_age"];
+$tea_age_in_range = $_REQUEST["tea_age_in_range"];
 $amount = $_REQUEST["amount"];
 $date = trim($_REQUEST["date"]);
 
@@ -24,28 +24,28 @@ $date = trim($_REQUEST["date"]);
 
 // todo: check the data if is empty
 // ...
+$t_age_in_range = explode("-", $tea_age_in_range);
 
-$t_age_range = explode("-", $tea_age)
-$tea_age_from
-$tea_age_to
-
-if ($count($t_age_range) < 2){
-	$tea_age_from = substr(trim($tea_age), 1)
-	$tea_age_to = 99
+if (count($t_age_in_range) < 2){
+	$tea_age_from = substr(trim($tea_age_in_range), 1);
+	$tea_age_to = 99;
 } else {
-	$tea_age_from = $t_age_range[0]
-	$tea_age_to = $t_age_range[1]
+	$tea_age_from = $t_age_in_range[0];
+	$tea_age_to = $t_age_in_range[1];
 }
 
+// echo "from: {$tea_age_from}, to: {$tea_age_to}";
+// echo var_dump($_REQUEST);
 
-exit();
+// echo "d: {eventForm.name.$touched}";
+// exit();
 
 
 $mysql = new Mysql();
 
 if (!userExists($mysql, $mobile)){
 	// create user for the first time
-	$sql = "insert into user values(null, '" . $name . "',null, ". $mobile .", " . $tea_age .", CURRENT_TIMESTAMP)";
+	$sql = "insert into user values(null, '" . $name . "',null, ". $mobile .", null , CURRENT_TIMESTAMP, null, null, {$tea_age_from}, {$tea_age_to})";
 	$result = $mysql->insert($sql);
 //	$err_msg = $mysql->get_err();
 }

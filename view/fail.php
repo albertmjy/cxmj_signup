@@ -27,7 +27,7 @@
 					<div class="alert alert-danger" role="alert">Oh My God！出了一些问题!</div>
 					<div>name: <?php echo $name ?></div>
 					<div>mobile: <?php echo $mobile ?></div>
-					<div>tea age: <?php echo $tea_age ?></div>
+					<div>tea age: <?php echo $tea_age_in_range ?></div>
 					<div>amount <?php echo $amount ?></div>
 					<div>date <?php echo $date ?></div>
 					<div><?php echo $mysql->get_err() ?></div>

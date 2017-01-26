@@ -28,7 +28,7 @@
 					<div class="well">
 						<div>称呼：<?php echo $name ?></div>
 						<div>手机：<?php echo $mobile ?></div>
-						<div>茶龄：<?php echo $tea_age ?></div>
+						<div>茶龄：<?php echo $tea_age_in_range ?></div>
 						<div>人数：<?php echo $amount ?></div>
 						<div>日期：<?php echo $date ?></div>
 					</div>
