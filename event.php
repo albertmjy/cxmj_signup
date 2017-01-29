@@ -80,12 +80,11 @@ $userInfo = json_decode($userInfoString);
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#">
 		      	<img class="brand" alt="Brand" src="img/getheadimg.jpeg" alt="logo" />
-		      	
 		      </a>
-		      
+
+
 		    </div>
-		    
-		    
+
 		    <div class="nav-user-info" id="">
 			  <img class="img-circle head-img" src='<?php echo $userInfo->headimgurl?>' />
 			  <span><?php echo $userInfo->nickname ?></span>
@@ -141,7 +140,7 @@ $userInfo = json_decode($userInfoString);
 
 
 				
-				<form ng-submit='cacheData()' class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/new_reg_activity.php" novalidate >
+				<form ng-submit='cacheData(); disableSubmit()' class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/new_reg_activity.php" novalidate >
 					
 					<div class="form-group nowrap">
 
@@ -272,7 +271,7 @@ $userInfo = json_decode($userInfoString);
 				    
 				    <div class="submit">
 
-				    	<button type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || !dateSelected || eventForm.$invalid ">确认报名！</button>
+				    	<button name='btnSubmit' type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || !dateSelected || eventForm.$invalid ">确认报名！</button>
 				    </div>
 				</form>
 

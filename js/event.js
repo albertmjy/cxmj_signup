@@ -25,6 +25,7 @@ app.controller('eventCtrl', function($scope, $http){
 		console.log($scope.tea_age_arr)
 	}
 
+	// @Deprecated 
 	// allow only number input, call for each key press
 	$scope.numOnly = function(e){
 		var keycode = e.which || e.keycode
@@ -34,8 +35,9 @@ app.controller('eventCtrl', function($scope, $http){
 		if (char.search(/^[0-9]$/) < 0){
 			e.preventDefault()
 		} 
-
 	}
+
+
 
 	// validate the the mobile pattern when blur event
 	// $scope.mob = ""
@@ -163,6 +165,10 @@ app.controller('eventCtrl', function($scope, $http){
 		lst.setItem("tea_age_in_range", eventForm.tea_age_in_range.value)
 
 		lst.setItem("amount", $scope.amount)
+	}
+
+	$scope.disableSubmit = function(){
+		eventForm.btnSubmit.disabled = true
 	}
 
 
