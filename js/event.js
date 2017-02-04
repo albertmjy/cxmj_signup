@@ -88,7 +88,11 @@ app.controller('eventCtrl', function($scope, $http){
 	$scope.dateSelected = []
 	// var availableDate = [0, 2]
 	$scope.next_tuesday = _nextTuesdayDate().toJSON().substr(0,10) + "," + daysCN[2]
+	$scope.next_tuesday_value = _nextTuesdayDate().toJSON()
+	$scope.next_friday = _nextFridayDate().toJSON().substr(0,10) + "," + daysCN[5]
+	$scope.next_friday_value = _nextFridayDate().toJSON()
 	$scope.next_sunday = _nextSundayDate().toJSON().substr(0,10) + "," + daysCN[0]
+	$scope.next_sunday_value = _nextSundayDate().toJSON()
 
 	// @Deprecate
 	$scope.newSelectDate = function(d){
@@ -235,6 +239,21 @@ function _nextSundayDate(){
 	
 	var date_diff = 0 - day;
 	now.setDate(date + date_diff +7)
+	
+	return now
+}
+
+function _nextFridayDate(){
+	var now = new Date();
+	var day = now.getDay();
+	var date = now.getDate()
+	
+	var date_diff = 5 - day;
+	if (day>=0 && day<=5){
+		now.setDate(date + date_diff)
+	} else {
+		now.setDate(date + date_diff +7)
+	}
 	
 	return now
 }

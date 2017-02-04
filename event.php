@@ -210,11 +210,16 @@ $userInfo = json_decode($userInfoString);
 
 						<div class="btn-group btn-block" data-toggle="buttons" >
 						  <label class="btn btn-success col-xs-6" ng-click='dateSelect()' >
-						    <input type="radio" name="date" ng-model='sel_date' id="date1" autocomplete="off" value='{{next_tuesday}}' > {{next_tuesday}}
+						    <input type="radio" name="date" ng-model='sel_date' id="date1" autocomplete="off" value='{{next_tuesday_value}}' > {{next_tuesday}}
 						  </label>
 						  <label class="btn btn-success col-xs-6" ng-click='dateSelect()' >
-						    <input type="radio" name="date" ng-model='sel_date' id="date2" autocomplete="off" value='{{next_sunday}}' > {{next_sunday}}
+						    <input type="radio" name="date" ng-model='sel_date' id="date2" autocomplete="off" value='{{next_friday_value}}' > {{next_friday}}
 						  </label>
+						</div>
+						<div class="btn-group btn-block" data-toggle="buttons" >
+							<label class="btn btn-success col-xs-6" ng-click='dateSelect()' >
+							    <input type="radio" name="date" ng-model='sel_date' id="date3" autocomplete="off" value='{{next_sunday_value}}' > {{next_sunday}}
+							  </label>
 						</div>
 				    </div>
 					
