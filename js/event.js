@@ -8,6 +8,7 @@ app.controller('eventCtrl', function($scope, $http){
 	// init process
 	$scope.hasTeaAge = false
 	$scope.hasDate = false
+	$scope.btnSubmitText = "确认报名！"
 	$scope.init = function(){
 		// load form data if any
 		var lst = localStorage
@@ -154,6 +155,7 @@ app.controller('eventCtrl', function($scope, $http){
 	}
 
 	$scope.cacheData = function(){
+		console.log("-----Cache Data----")
 		var lst = localStorage
 		lst.setItem("name", $scope.name)
 		lst.setItem("mobile", $scope.mobile)
@@ -173,6 +175,9 @@ app.controller('eventCtrl', function($scope, $http){
 
 	$scope.disableSubmit = function(){
 		eventForm.btnSubmit.disabled = true
+		$scope.btnSubmitText = "正在提交。。。"
+		console.log("-----Disable Submit----")
+		return false
 	}
 
 
@@ -229,6 +234,7 @@ function _nextTuesdayDate(){
 		now.setDate(date + date_diff +7)
 	}
 	
+	now.setUTCHours(8)
 	return now
 }
 

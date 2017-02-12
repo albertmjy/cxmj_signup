@@ -155,6 +155,10 @@ h5{
 	font-size: 16pt;
 }
 
+/* @Override */
+.btn{
+	border:0
+}
 
 /* // make the navbar no responsive
 .navbar-header {

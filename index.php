@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -59,6 +62,9 @@ $userInfoString = http_get($userInfoUrl);
 $userInfo = json_decode($userInfoString);
 
 
+
+// session token to prevent duplicated submission
+$_SESSION['token'] = md5(session_id() . time());
 ?>
 
 		
@@ -140,7 +146,7 @@ $userInfo = json_decode($userInfoString);
 
 
 				
-				<form ng-submit='cacheData(); disableSubmit()' class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/new_reg_activity.php" novalidate >
+				<form ng-submit='disableSubmit() ; cacheData()' class="event-form" name="eventForm" enctype="application/x-www-form-urlencoded" id="reg_activity" action="model/new_reg_activity.php" novalidate >
 					
 					<div class="form-group nowrap">
 
@@ -275,8 +281,8 @@ $userInfo = json_decode($userInfoString);
 				    </div>
 				    
 				    <div class="submit">
-
-				    	<button name='btnSubmit' type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || !dateSelected || eventForm.$invalid ">确认报名！</button>
+				    	<input type="hidden" name="token" value="<?php echo $_SESSION['token'];?>">
+				    	<button ng-cloak name='btnSubmit' type="submit" class="btn btn-info btn-block" ng-disabled="!mobCompleted || !dateSelected || eventForm.$invalid ">{{btnSubmitText}}</button>
 				    </div>
 				</form>
 

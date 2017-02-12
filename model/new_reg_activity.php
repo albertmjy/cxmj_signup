@@ -1,6 +1,6 @@
 <?php  require "mysql.php";
 //header("Content-Type:application/json;charset=utf-8");
-
+session_start();
 
 function nextTuesdayDate($mysql){
 	
@@ -13,13 +13,31 @@ function userExists($mysql, $mobile){
 	return $result?true:false;
 }
 
+$token = $_REQUEST["token"];
 $name = $_REQUEST["name"];
 $mobile = $_REQUEST["mobile"];
 $tea_age_in_range = $_REQUEST["tea_age_in_range"];
 $amount = $_REQUEST["amount"];
 $date = trim($_REQUEST["date"]);
 
-// echo var_dump($_REQUEST);
+
+
+// check the token to prevent the duplicated submission
+// echo $_REQUEST["token"];
+// echo "<br />";
+// echo $_SESSION["token"];
+// echo "<br />";
+
+if (!isset($_SESSION['token']) || !isset($token)){
+	echo "Exception on form submission!";
+	exit();
+}
+if ($token != $_SESSION['token']){
+	echo "Invalid token";
+	exit();
+}
+// valid token, clear it
+unset($_SESSION["token"]); 
 
 
 // todo: check the data if is empty
@@ -52,9 +70,9 @@ if (!userExists($mysql, $mobile)){
 
 // check if activity registered 
 //$sql_sel_register = "select * from tea_activity where DATE(reg_date)=CURDATE() and mobile={$mobile}";
-//echo $date;
-$d = explode(" ", $date);
-$d_1 = $d[0];
+
+// $d = explode(" ", $date);
+$d_1 = substr($date, 0, 10);
 $sql_sel_register = "select * from tea_activity where DATE(activity_date)='{$d_1}' and mobile={$mobile}";
 //echo $sql_sel_register ;
 
