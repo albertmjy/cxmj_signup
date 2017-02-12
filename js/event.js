@@ -88,12 +88,18 @@ app.controller('eventCtrl', function($scope, $http){
 
 	$scope.dateSelected = []
 	// var availableDate = [0, 2]
-	$scope.next_tuesday = _nextTuesdayDate().toJSON().substr(0,10) + "," + daysCN[2]
-	$scope.next_tuesday_value = _nextTuesdayDate().toJSON()
-	$scope.next_friday = _nextFridayDate().toJSON().substr(0,10) + "," + daysCN[5]
-	$scope.next_friday_value = _nextFridayDate().toJSON()
-	$scope.next_sunday = _nextSundayDate().toJSON().substr(0,10) + "," + daysCN[0]
-	$scope.next_sunday_value = _nextSundayDate().toJSON()
+	// var nextTue = _nextTuesdayDate() //_localTimezon(_nextTuesdayDate())
+	// var nextFri = _nextFridayDate()//_localTimezon(_nextFridayDate())
+	// var nextSun = _nextSundayDate()//_localTimezon(_nextSundayDate())
+	var nextTue = _localTimezone(_nextTuesdayDate())
+	var nextFri = _localTimezone(_nextFridayDate())
+	var nextSun = _localTimezone(_nextSundayDate())
+	$scope.next_tuesday = nextTue.toJSON().substr(0,10) + "," + daysCN[2]
+	$scope.next_tuesday_value = nextTue.toJSON()
+	$scope.next_friday = nextFri.toJSON().substr(0,10) + "," + daysCN[5]
+	$scope.next_friday_value = nextFri.toJSON()
+	$scope.next_sunday = nextSun.toJSON().substr(0,10) + "," + daysCN[0]
+	$scope.next_sunday_value = nextSun.toJSON()
 
 	// @Deprecate
 	$scope.newSelectDate = function(d){
@@ -234,7 +240,6 @@ function _nextTuesdayDate(){
 		now.setDate(date + date_diff +7)
 	}
 	
-	now.setUTCHours(8)
 	return now
 }
 
@@ -262,4 +267,9 @@ function _nextFridayDate(){
 	}
 	
 	return now
+}
+
+function _localTimezone(d){
+	d.setUTCMinutes(d.getUTCMinutes() - d.getTimezoneOffset())
+	return d
 }
